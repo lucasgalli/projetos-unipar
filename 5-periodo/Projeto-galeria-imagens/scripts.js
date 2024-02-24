@@ -1,19 +1,18 @@
 $(document).ready(function(){
 
 	const baseImagens = {
-		todas:['imagem.jpg', 'cidade.jpg', 'animal.jpg', 'natureza.jpg'],
-		animais:['animal.jpg', 'animal1.jpg', 'animal2.jpg', 'animal3.jpg'],
-		natureza:['natureza.jpg', 'natureza1.jpg', 'natureza2.jpg', 'natureza3.jpg'],
-		cidade:['cidade.jpg', 'cidade1.jpg', 'cidade2.jpg', 'cidade3.jpg']
+		todas: ['imagem.jpg', 'cidade.jpg', 'animal.jpg', 'natureza.jpg'],
+		animais:['animal.jpg', 'animal1.jpg', 'animal2.jpg', 'animal3.jpeg'],
+		natureza:['natureza.jpg', 'natureza1.jpg', 'natureza2.jpg'],
+		cidade:['cidade.jpg', 'cidade1.jpg', 'cidade2.jpg']
 	}
 
-	function carregaImagens(categoria){ //
+	function carregaImagens(categoria){
 		const imagens = baseImagens[categoria];
 		const boxImagens = $('body').find('.box-imagens');
-		
+		boxImagens.empty();
 		imagens.forEach(img => {
-			console.log(img);
-			boxImagens.append('<div><img src="imagens/'+img+'" /></div>');
+			boxImagens.append('<div class="imagem-item"><img src="imagens/'+img+'" /></div>');
 		});
 	}
 

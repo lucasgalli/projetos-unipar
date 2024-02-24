@@ -1,4 +1,4 @@
-Body{
+body{
 	background-color: #f4f4f4;
 	display: grid;
 	grid-template-rows:auto 1fr auto;
@@ -24,8 +24,21 @@ footer{
 	background-color: #333;
 	width: 100%;
 	color:#FFF;
+	text-align: center;
 }
 
 .active{
 	background-color: #2e6d30;
+}
+
+.box-imagens{
+	display: flex;
+	justify-content: center;
+	padding:20px;
+	flex-wrap: wrap;
+}
+
+.imagem-item img{
+	max-width: 100%;
+	max-height: calc(100vh - 200px);
 }
