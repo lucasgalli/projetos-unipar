@@ -2,9 +2,9 @@ $(document).ready(function(){
 
 	const baseImagens = {
 		todas: ['imagem.jpg', 'cidade.jpg', 'animal.jpg', 'natureza.jpg'],
-		animais:['animal.jpg', 'animal1.jpg', 'animal2.jpg', 'animal3.jpeg'],
-		natureza:['natureza.jpg', 'natureza1.jpg', 'natureza2.jpg'],
-		cidade:['cidade.jpg', 'cidade1.jpg', 'cidade2.jpg']
+		animais:['animal.jpg', 'animal1.jpg', 'animal2.jpg', 'animal3.jpg'],
+		natureza:['natureza.jpg', 'natureza1.jpg', 'natureza2.jpg', 'natureza3.jpg'],
+		cidade:['cidade.jpg', 'cidade1.jpg', 'cidade2.jpg', 'cidade3.jpg']
 	}
 
 	function carregaImagens(categoria){
@@ -16,12 +16,17 @@ $(document).ready(function(){
 		});
 	}
 
-	$('.botao-categoria').click(function(){
+	$('body').on('click', '.botao-categoria', function () {
 		$('body').find('.botao-categoria').removeClass('active');
 		$(this).addClass('active');	
 		const categoria = $(this).data('categoria');
 		carregaImagens(categoria);
 	});
 
+	/*$('header').click(function () {*/
+	$('body').on('click', 'img', function () {
+		alert(123)
+	});
 
+	//carregaImagens('todas');
 });
