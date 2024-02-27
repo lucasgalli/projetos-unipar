@@ -7,7 +7,9 @@ $(document).ready(function(){
 		cidade:['cidade.jpg', 'cidade1.jpg', 'cidade2.jpg', 'cidade3.jpg']
 	}
 
-	function carregaImagens(categoria){//
+	alert(123)
+
+	function carregaImagens(categoria){
 		const imagens = baseImagens[categoria];
 		const boxImagens = $('body').find('.box-imagens');
 		boxImagens.empty();
