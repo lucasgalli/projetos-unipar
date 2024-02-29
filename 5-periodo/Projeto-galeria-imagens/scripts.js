@@ -12,7 +12,7 @@ $(document).ready(function(){
 		const boxImagens = $('body').find('.box-imagens');
 		boxImagens.empty();
 		imagens.forEach(img => {
-			boxImagens.append('<div class="imagem-item"><img src="imagens/'+img+'" /></div>');
+			boxImagens.append('<div class="imagem-item"><img src="imagens/'+img+'" alt="'+img+'" /></div>');
 		});
 	}
 
@@ -23,10 +23,44 @@ $(document).ready(function(){
 		carregaImagens(categoria);
 	});
 
-	/*$('header').click(function () {*/
-	$('body').on('click', 'img', function () {
-		alert(123)
+	function sortImagens(sort){
+		const imagens = $('.box-imagens .imagem-item');
+		imagens.sort(function (a, b){
+			const imagemA = $(a).find('img').attr('alt');
+			const imagemB = $(b).find('img').attr('alt');
+			//console.log(imagemA);
+			if(sort == 'asc'){
+				return imagemA.localeCompare(imagemB);
+			}
+			else{
+				return imagemB.localeCompare(imagemA);
+			}
+		});
+
+		$('body').find('.box-imagens').append(imagens);
+		//console.log(imagens);
+	}
+
+	$('body').on('click', '.botao-ordenar', function () {
+		const sort = $(this).data('sort');
+		sortImagens(sort);
 	});
 
-	//carregaImagens('todas');
+	function buscaImagens(busca){
+		const imagens = $('.box-imagens .imagem-item');
+		console.log(imagens);
+		imagens.each(function(){
+			const nomeImagem = $(this).find('img').attr('alt');
+			const imagemVisivel = nomeImagem.startsWith(busca);
+			//console.log(imagemVisivel);
+			$(this).toggle(imagemVisivel);
+		});
+	}
+
+	$('#busca-imagens').on('input', function(){
+		const busca = $(this).val();
+		buscaImagens(busca);
+	});
+
+	carregaImagens('todas');
 });
