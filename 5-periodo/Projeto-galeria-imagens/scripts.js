@@ -53,7 +53,7 @@ $(document).ready(function(){
 		});
 	}
 
-	$('#busca-imagens').on('keypress', function(e){
+	$('#busca-imagens').on('input', function(e){
 		const busca = $(this).val();
 		buscaImagens(busca);
 	});
