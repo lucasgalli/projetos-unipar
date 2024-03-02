@@ -54,8 +54,7 @@ $(document).ready(function(){
 	}
 
 	$('#busca-imagens').on('keyup', function(e){
-		const busca = $(this).val();
-		alert(busca);
+		const busca = $(this).val().toLowerCase(); //deixar tudo minúsculo porque causa do mobile, teclado inicia com maiúscula
 		buscaImagens(busca);
 	});
 
