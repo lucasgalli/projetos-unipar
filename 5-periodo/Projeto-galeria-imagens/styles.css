@@ -4,6 +4,7 @@ body{
 	grid-template-rows:auto 1fr auto;
 	height: 100vh;
 	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
 }
 header{
 	background-color: #333;
@@ -11,7 +12,7 @@ header{
 	text-align: center;
 }
 
-.botao-categoria{
+.botao-categoria, .botao-ordenar{
 	background-color: #4CAF50;
 	color:#FFF;
 	padding: 10px 20px;
@@ -20,6 +21,7 @@ header{
 	cursor: pointer;
 	border: 0;
 }
+
 footer{
 	height: 70px;
 	background-color: #333;
@@ -42,4 +44,43 @@ footer{
 .imagem-item img{
 	max-width: 100%;
 	max-height: calc(100vh - 200px);
+	z-index: 1;
+}
+
+.imagem-selecionada{
+	position: absolute;
+	top:0;
+	margin-left: auto;
+	margin-right: auto;
+	left:0;
+	right:0;
+	text-align: center;
+	z-index: 2;
+	height: 100vh;
+}
+
+.bg-img{
+	background-color: #333333c5;
+}
+
+.fechar-imagem{
+	position: absolute;
+	color:#FFF;
+	right: 20px;
+	top:20px;
+	padding:7px 10px;
+	cursor:pointer;
+	border: 1px solid #FFF;
+	border-radius: 10px;
+	display:none;
+}
+
+.botao-ordenar{
+	background-color: #173b8f;
+}
+.botao-ordenar:hover{
+	background-color: #122b66;
+}
+.botao-categoria:hover{
+	background-color: #2e6d30;
 }

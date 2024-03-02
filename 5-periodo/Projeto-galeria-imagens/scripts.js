@@ -12,7 +12,7 @@ $(document).ready(function(){
 		const boxImagens = $('body').find('.box-imagens');
 		boxImagens.empty();
 		imagens.forEach(img => {
-			boxImagens.append('<div class="imagem-item"><img src="imagens/'+img+'" alt="'+img+'" /></div>');
+			boxImagens.append('<div class="imagem-item"><div class="fechar-imagem">X</div><img src="imagens/'+img+'" alt="'+img+'" /></div>');
 		});
 	}
 
@@ -28,7 +28,6 @@ $(document).ready(function(){
 		imagens.sort(function (a, b){
 			const imagemA = $(a).find('img').attr('alt');
 			const imagemB = $(b).find('img').attr('alt');
-			//console.log(imagemA);
 			if(sort == 'asc'){
 				return imagemA.localeCompare(imagemB);
 			}
@@ -38,7 +37,6 @@ $(document).ready(function(){
 		});
 
 		$('body').find('.box-imagens').append(imagens);
-		//console.log(imagens);
 	}
 
 	$('body').on('click', '.botao-ordenar', function () {
@@ -48,18 +46,41 @@ $(document).ready(function(){
 
 	function buscaImagens(busca){
 		const imagens = $('.box-imagens .imagem-item');
-		console.log(imagens);
 		imagens.each(function(){
 			const nomeImagem = $(this).find('img').attr('alt');
 			const imagemVisivel = nomeImagem.startsWith(busca);
-			//console.log(imagemVisivel);
 			$(this).toggle(imagemVisivel);
 		});
 	}
 
-	$('#busca-imagens').on('input', function(){
+	$('#busca-imagens').on('keypress', function(e){
 		const busca = $(this).val();
 		buscaImagens(busca);
+	});
+
+	$(document).on('keydown', function(e){
+		if(e.which == 27){
+			$('body').find('.box-imagens .imagem-item').removeClass('imagem-selecionada');
+			$('body').find('.box-imagens .imagem-item').removeClass('bg-img');
+			$('html, body').css({'overflow':'auto','height':'100vh'});
+			$('body').find('.fechar-imagem').hide();
+		}
+	});
+
+	$('body').on('click', 'img', function(){
+		$(this).css('max-height', '100vh - 200px');
+		$(this).parent().find('.fechar-imagem').show();
+		$(this).parent().addClass('imagem-selecionada');
+		$(this).parent().addClass('bg-img');
+
+		$('html, body').css({'overflow':'hidden','height':'100%'});
+	});
+
+	$('body').on('click', '.fechar-imagem', function(){
+		$(this).parent().removeClass('imagem-selecionada');
+		$(this).parent().removeClass('bg-img');
+		$('html, body').css({'overflow':'auto','height':'100vh'});
+		$(this).hide();
 	});
 
 	carregaImagens('todas');
