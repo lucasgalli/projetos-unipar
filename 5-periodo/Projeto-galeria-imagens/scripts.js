@@ -83,5 +83,12 @@ $(document).ready(function(){
 		$(this).hide();
 	});
 
+	$('body').on('click', '.bg-img', function(){
+		$(this).removeClass('imagem-selecionada');
+		$(this).removeClass('bg-img');
+		$('html, body').css({'overflow':'auto','height':'100vh'});
+		$('body').find('.fechar-imagem').hide();
+	});
+
 	carregaImagens('todas');
 });

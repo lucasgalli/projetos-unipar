@@ -22,6 +22,12 @@ header{
 	border: 0;
 }
 
+#busca-imagens{
+	font-size: 24px;
+	outline: none;
+	border-radius: 5px;
+}
+
 footer{
 	height: 70px;
 	background-color: #333;
