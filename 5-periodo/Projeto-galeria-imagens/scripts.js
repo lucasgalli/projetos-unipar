@@ -55,6 +55,7 @@ $(document).ready(function(){
 
 	$('#busca-imagens').on('keyup', function(e){
 		const busca = $(this).val();
+		alert(busca);
 		buscaImagens(busca);
 	});
 
