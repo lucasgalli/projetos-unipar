@@ -73,3 +73,38 @@ button {
 	transform: rotate(90deg);
 	color: #fff;
 }
+
+@media only all and (max-width: 600px) {
+	.container {
+		display: grid;
+	}
+	#consultar{
+		margin-top: 10px;
+	}
+}
+
+@media print {
+	.container{
+		border-radius: unset;
+	}
+	.container h1{
+		display: none;
+	}
+}
+
+/*
+TIPO DE MEDIA QUERIES
+
+All :Para todos os dispositivos.
+Screen :Para monitores ou outros dispositivos com telas coloridas e com resolução adequada.
+Print: Para impressão em papel.
+
+
+width
+height
+device-width
+device-height
+orientation
+aspect-ratio
+
+*/
