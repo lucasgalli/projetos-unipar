@@ -5,10 +5,21 @@
 	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
 	<title>Page Title</title>
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
-	<link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-	<script src='main.js'></script>
+	<link rel='stylesheet' type='text/css' href='styles.css'>
+	<link rel='stylesheet' type='text/css' href='node_modules/@fortawesome/fontawesome-free/css/all.css'>
 </head>
 <body>
-	Esse será o projeto busca endereço
+	<main class="container">
+		<h1>Consulta de endereços</h1>
+		<label for="cep">Digite Cep:</label><br>
+		<input type="text" id="cep">
+		<button id="consultar">Consultar</button>
+		<div id="resultados">
+
+		</div>
+	</main>
+	<script src="node_modules/jquery/dist/jquery.js"></script>
+	<script src="node_modules/js-cookie/dist/js.cookie.min.js"></script>
+	<script src="scripts.js"></script>
 </body>
 </html>
