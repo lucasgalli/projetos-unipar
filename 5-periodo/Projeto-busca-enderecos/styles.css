@@ -6,6 +6,7 @@ body{
 	height: 100vh;
 	background-color: #f8f9fa;
 	color: #343a40;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 .container{
@@ -14,4 +15,38 @@ body{
 	padding: 20px;
 	border-radius: 8px;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#resultados img{
+	width: 100px;
+}
+
+input{
+	padding: 8px;
+	font-size: 16px;
+}
+
+#consultar{
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	background-color: #0015ff;
+	color: #FFF;
+	border: 0;
+}
+
+#modo-noturno{
+	position: fixed;
+	top:20px;
+	left:20px;
+	background-color: transparent;
+	border:none;
+	cursor: pointer;
+	font-size: 2em;
+	color: #000;
+}
+
+.dark-mode{
+	background-color: #343a40;
+	color: #FFF;
 }
