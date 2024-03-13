@@ -49,6 +49,7 @@ li {
 .descricao-tarefa {
 	display: flex;
 	flex: auto;
+	width: 100%;
 	background-color: transparent;
 	font-size: 1.4em;
 	outline: none;
