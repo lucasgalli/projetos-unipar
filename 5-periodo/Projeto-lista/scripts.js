@@ -3,7 +3,7 @@ $(document).ready(function () {
 	function adicionaTarefa() {
 		var tarefa = $('#tarefa').val();
 		if (tarefa !== '') { //trim() - apagar os espaços
-			$('#lista-tarefas').prepend('<li class="item"><span class="descricao-tarefa">' + tarefa + '</span><i class="fa-solid fa-trash-can remover-tarefa"></i></li>');
+			$('#lista-tarefas').prepend('<li class="item"><input type="checkbox" class="conclui-tarefa"><input type="text" class="descricao-tarefa" value="' + tarefa + '"><i class="fa-solid fa-trash-can remover-tarefa"></i></li>');
 			$('#tarefa').val('');
 		}
 	}
@@ -18,8 +18,8 @@ $(document).ready(function () {
 		$(this).parent().remove();
 	});
 
-	$('body').on('click', '.item', function () {
-		$(this).find('.descricao-tarefa').toggleClass('feito');
+	$('body').on('click', '.conclui-tarefa', function () {
+		$(this).parent().find('.descricao-tarefa').toggleClass('feito');
 	});
 
 	$(".item").draggable({
