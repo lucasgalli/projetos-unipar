@@ -19,7 +19,7 @@ $(document).ready(function () {
 	});
 
 	$('body').on('click', '.item', function () {
-		$(this).find('input[name=descricao-tarefa').focus();
+		$(this).find('.descricao-tarefa').focus();
 	});
 
 	$('body').on('click', '.conclui-tarefa', function () {
