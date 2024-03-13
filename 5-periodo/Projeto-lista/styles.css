@@ -55,6 +55,7 @@ li {
 	border: 0;
 	color: #fff;
 	cursor: pointer;
+	z-index:-1;
 }
 .remover-tarefa {
 	background-color: transparent;
