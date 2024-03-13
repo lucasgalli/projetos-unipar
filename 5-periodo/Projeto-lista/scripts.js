@@ -18,6 +18,10 @@ $(document).ready(function () {
 		$(this).parent().remove();
 	});
 
+	$('body').on('click', '.item', function () {
+		$(this).find('input[name=tarefa').focus();
+	});
+
 	$('body').on('click', '.conclui-tarefa', function () {
 		$(this).parent().find('.descricao-tarefa').toggleClass('feito');
 	});
