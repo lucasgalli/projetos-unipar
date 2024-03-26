@@ -7,7 +7,7 @@ $(document).ready(function(){
 	function consultaCep(){
 		const cep = $('#cep').val();
 		if(cep.length !== 8){
-			alert('Digite o cep corretamenta');
+			$('body').find("#resultados").html('<div class="msg-resultado">Digite o cep corretamenta</div>');
 			return false;
 		}
 

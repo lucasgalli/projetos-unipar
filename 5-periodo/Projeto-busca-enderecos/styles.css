@@ -61,3 +61,13 @@ input{
 	transform: rotate(90deg);
 	color:#FFF;
 }
+
+.msg-resultado{
+	margin-top: 10px;
+	color:rgb(131, 5, 5);
+	font-weight: bold;
+}
+
+label{
+	display: block;
+}
