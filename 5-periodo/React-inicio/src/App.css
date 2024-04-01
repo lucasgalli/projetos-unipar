@@ -1,6 +1,11 @@
 body {
 	text-align: center;
+	margin: 0;
 }
 .modo-escuro {
 	background-color: rgb(60, 60, 60);
+	color: #fff;
+}
+.main {
+	height: 100vh;
 }
