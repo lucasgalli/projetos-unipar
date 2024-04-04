@@ -1,7 +1,7 @@
 import React from "react";
 
 const About = () => {
-	return <>Página Sobre</>;
+	return <main>Página para adicionar dados</main>;
 };
 
 export default About;
